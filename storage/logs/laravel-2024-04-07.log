@@ -1,1 +1,0 @@
-[2024-04-07 04:03:06] production.ERROR: SQLSTATE[HY000]: General error: 2006 Server has gone away (Connection: mysql, SQL: delete from `audit_histories` where `created_at` <= 2024-03-07 04:03:06 limit 1000) - /home/oqrkrpbs/offices.topdealhot.com/vendor/laravel/framework/src/Illuminate/Database/Connection.php:822  

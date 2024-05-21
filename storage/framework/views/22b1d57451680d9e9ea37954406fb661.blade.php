@@ -1,1 +1,0 @@
-Login <x-core::icon name="ti ti-arrow-narrow-right" class="ms-1" />

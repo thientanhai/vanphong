@@ -1,1 +1,0 @@
-<x-core::icon name="ti ti-plus" />Create

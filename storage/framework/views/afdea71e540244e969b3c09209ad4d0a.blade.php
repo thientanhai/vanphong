@@ -1,1 +1,0 @@
-<x-core::badge label="Yes" color="success" />

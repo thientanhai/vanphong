@@ -1,1 +1,0 @@
-<x-core::form.label>Hide property if its status is:</x-core::form.label>

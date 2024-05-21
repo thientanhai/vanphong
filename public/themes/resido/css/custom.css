@@ -35,6 +35,10 @@ b, strong {
     background-color: var(--bg-light)!important;
 }
 
+.property_block_wrap.style-2 .property_block_wrap_header h4 {
+    font-weight: 500!important;
+}
+
 .swiper-pagination {
     display: none!important;
 }

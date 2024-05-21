@@ -1,1 +1,0 @@
-<x-core::form.label  for="repeater_field_38f0e2b7281e9a39c470a56aee823ef1">Label</x-core::form.label>

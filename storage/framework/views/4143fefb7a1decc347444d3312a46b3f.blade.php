@@ -1,1 +1,0 @@
-<x-core::form.label>Mandatory fields at consult form</x-core::form.label>

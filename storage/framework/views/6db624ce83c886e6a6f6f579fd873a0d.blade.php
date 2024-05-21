@@ -1,1 +1,0 @@
-<x-core::form.label>Hide fields at consult form</x-core::form.label>
