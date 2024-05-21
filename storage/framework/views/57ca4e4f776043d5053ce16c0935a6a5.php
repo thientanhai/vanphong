@@ -1,0 +1,2 @@
+<input type="text" class="form-control" name="min_square" value="<?php echo e(request()->input('min_area')); ?>" placeholder="<?php echo e(__('Min Area')); ?>">
+<?php /**PATH /home/oqrkrpbs/offices.topdealhot.com/platform/themes/resido/partials/real-estate/filters/min-area.blade.php ENDPATH**/ ?>

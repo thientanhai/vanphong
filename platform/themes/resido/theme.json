@@ -1,0 +1,15 @@
+{
+    "id": "thesky9/resido",
+    "name": "GGA - Real Estate",
+    "namespace": "Theme\\Resido\\",
+    "description": "Real Estate theme",
+    "author": "Devweb Team",
+    "version": "2.22.0",
+    "required_plugins": [
+        "blog",
+        "contact",
+        "language",
+        "location",
+        "real-estate"
+    ]
+}

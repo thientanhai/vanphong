@@ -1,0 +1,1 @@
+<span data-bs-toggle="tooltip" title="Total projects">(0)</span><?php /**PATH /home/oqrkrpbs/offices.topdealhot.com/storage/framework/views/6503cd27a1a6f3fe9ce747836f3909a1.blade.php ENDPATH**/ ?>

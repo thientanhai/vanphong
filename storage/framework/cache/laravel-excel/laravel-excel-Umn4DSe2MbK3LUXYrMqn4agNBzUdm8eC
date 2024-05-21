@@ -1,0 +1,6 @@
+﻿"Name","Slug","Abbreviation","State","Country","Import Type","Status","Order","Nationality","Name VI"
+"United States of America","","","","","country","published","0","Americans",""
+"Texas","","TX","","United States of America","state","published","0","","Bang Texas"
+"Washington","","WA","","United States of America","state","published","0","","Bang Washington"
+"Houston","houston","","Texas","United States of America","city","published","0","","Thành phố Houston"
+"San Antonio","san-antonio","","Texas","United States of America","city","published","0","","Thành phố San Antonio"

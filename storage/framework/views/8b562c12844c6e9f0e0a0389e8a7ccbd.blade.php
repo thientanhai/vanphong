@@ -1,0 +1,1 @@
+<x-core::badge label="No" color="danger" />

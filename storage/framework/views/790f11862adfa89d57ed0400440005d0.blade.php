@@ -1,0 +1,1 @@
+<x-core::form.label>Hide project if its status is:</x-core::form.label>

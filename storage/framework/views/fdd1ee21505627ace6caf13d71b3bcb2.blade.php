@@ -1,0 +1,1 @@
+<x-core::button type="submit" color="primary" class="w-full" icon="ti ti-login-2">Sign in</x-core::button>

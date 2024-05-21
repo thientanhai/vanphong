@@ -1,0 +1,1 @@
+<x-core::badge color="success" label="Selling" />

@@ -1,0 +1,1 @@
+<x-core::button id="add-new-row">Add new row</x-core::button>

@@ -1,0 +1,17 @@
+/* .property-listing{
+    width: 32%;
+    float: left;
+    margin: 5px;
+} */
+.listing-name{
+    font-weight: normal;
+}
+.truncate {
+    width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.listing-content{
+    padding: 5px;
+}

@@ -1,0 +1,1 @@
+<span data-bs-toggle="tooltip" title="Total properties">(4)</span>

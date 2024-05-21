@@ -1,0 +1,2 @@
+<h2 <?php echo e($attributes->merge(['class' => 'offcanvas-title'])); ?>><?php echo e($slot); ?></h2>
+<?php /**PATH /home/vanphong.com.vn/public_html/platform/core/base/resources/views/components/offcanvas/title.blade.php ENDPATH**/ ?>

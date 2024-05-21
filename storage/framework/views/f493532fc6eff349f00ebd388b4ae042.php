@@ -1,0 +1,1 @@
+<span data-bs-toggle="tooltip" title="Total properties">(4)</span><?php /**PATH /home/oqrkrpbs/offices.topdealhot.com/storage/framework/views/8af7c12de3f523f9527c133e601c0c3e.blade.php ENDPATH**/ ?>

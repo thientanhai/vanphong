@@ -1,0 +1,2 @@
+<input type="text" class="form-control" name="max_square" value="<?php echo e(request()->input('max_area')); ?>" placeholder="<?php echo e(__('Max Area')); ?>">
+<?php /**PATH /home/oqrkrpbs/offices.topdealhot.com/platform/themes/resido/partials/real-estate/filters/max-area.blade.php ENDPATH**/ ?>

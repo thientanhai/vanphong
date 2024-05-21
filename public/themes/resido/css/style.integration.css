@@ -1,0 +1,81 @@
+.choose-property-type [type=radio]:checked, .choose-property-type [type=radio]:not(:checked) {
+    left: unset;
+    position: relative;
+}
+[data-overlay]:before {
+    background: linear-gradient(180deg, rgba(20, 24, 32, 0) 63.43%, rgba(20, 24, 32, .8)), rgba(20, 24, 32, .5);
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    opacity: !important;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+.topbar {
+	display:none!important;
+}
+.hidden{display:none!important}
+.page-title{background:url("https://offices.topdealhot.com/storage/banners/bg.jpg") no-repeat;}
+.page-title .ipt-title {
+    color: #000;
+    font-size: 3rem!important;
+}
+.bl-continue {font-size:14px!important;font-style:normal!important;font-family:inherit}
+.blog-body p {font-size:14px!important;}
+.item-sorting-box-right {display:none!important;}
+.icon-actions-wrapper{display:none!importnat;}
+
+.product__description {
+    overflow: hidden!important;
+    position: relative!important;
+    padding-bottom: 25px!important;
+    margin-bottom: 50px!important;
+}
+.height__text {
+    height: 400px!important;
+}
+
+.devwebvn_readmore_flatsome {
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+}
+
+.devwebvn_readmore_flatsome {
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+}
+.devwebvn_readmore_flatsome a {
+    color: #000;
+    position: relative;
+    text-align: left;
+    margin: auto;
+    display: block;
+  font-weight:bold;
+}
+.devwebvn_readmore_flatsome:before {
+    margin-top: 0;
+    content: "" !important;
+    display: block !important;
+    height: 150px;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 70%);
+    transition: height .25s ease;
+}
+.devwebvn_readmore_flatsome_less:before {
+background:transparent!important;
+}
