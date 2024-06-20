@@ -59,7 +59,7 @@
             <form action="{{ route('public.properties') }}" method="get" id="ajax-filters-form">
                 <input type="hidden" name="page" data-value="{{ $properties->currentPage() }}">
                 <input type="hidden" name="layout" value="{{ request()->input('layout') }}">
-                <div class="row">
+                <div class="filter__cate">
                     @include(Theme::getThemeNamespace('views.real-estate.includes.filters-halfmap'))
                 </div>
                 <div class="row">
@@ -126,7 +126,7 @@
                     </div>
 
                     <!-- Pagination -->
-                    <div class="row">
+                    <div class="row d-block">
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <nav class="d-flex justify-content-center pt-3" aria-label="Page navigation">
                                 {!! $properties->withQueryString()->onEachSide(1)->links() !!}

@@ -601,5 +601,49 @@ app()->booted(function () {
                     ],
                 ],
             ],
+        ])
+        ->setSection([
+            'title' => __('Home page configure'),
+            'desc' => __('Home page configure'),
+            'id' => 'home-page-configure',
+            'subsection' => false,
+            'icon' => 'fa fa-home',
+            'fields' => [],
+        ])
+        ->setField([
+            'id'         => 'banner_bottom_content',
+            'section_id' => 'home-page-configure',
+            'type'       => 'repeater',
+            'label'      => __('Banner Bottom content'),
+            'attributes' => [
+                'name'   => 'banner_bottom_content',
+                'value'  => null,
+                'fields' => [
+                    [
+                        'type'       => 'text',
+                        'label'      => __('Content'),
+                        'attributes' => [
+                            'name'    => 'text',
+                            'value'   => null,
+                            'options' => [
+                                'class'        => 'form-control',
+                                'data-counter' => 255,
+                            ],
+                        ],
+                    ],
+                    [
+                        'type'       => 'number',
+                        'label'      => __('Value'),
+                        'attributes' => [
+                            'name'    => 'number_value',
+                            'value'   => null,
+                            'options' => [
+                                'class'        => 'form-control',
+                                'data-counter' => 255,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
         ]);
 });

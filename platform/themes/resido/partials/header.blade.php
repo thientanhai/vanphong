@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Fonts-->
-
+    <script src="https://unpkg.com/sticksy@latest/dist/sticksy.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family={{ urlencode(theme_option('font_heading', 'Jost')) }}:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family={{ urlencode(theme_option('primary_font', 'Muli')) }}:300,400,600,700" rel="stylesheet" type="text/css">
     <!-- CSS Library-->
@@ -127,7 +127,7 @@ if ($url == '/') {
     <!-- Start Navigation -->
     
     <div class="header header-light head-shadow ssssss" id="navbar">
-        <div class="container">
+        <div class="">
             <nav id="navigation" class="navigation navigation-landscape">
                 <div class="nav-header">
                     @if (theme_option('logo'))

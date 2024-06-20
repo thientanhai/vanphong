@@ -1,5 +1,5 @@
 
-<section class="bg-light bg-white py-xl-2">
+<section class="bg-light bg-white py-xl-4">
     <div class="container-fluid px-lg-5 px-sm-2">
 
         {{-- <div class="row justify-content-center">

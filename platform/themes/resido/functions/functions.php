@@ -617,4 +617,22 @@ add_action([BASE_ACTION_AFTER_CREATE_CONTENT, BASE_ACTION_AFTER_UPDATE_CONTENT],
     }
 }, 120, 3);
 
+//change type tinyMCE for category description
+add_filter(BASE_FILTER_BEFORE_RENDER_FORM, function ($form, $data) {
+    if ($data instanceof \Botble\RealEstate\Models\Category) {
+        $form
+            ->modify('description', 'editor', [
+                'label' => trans('core/base::forms.description'),
+                'label_attr' => ['class' => 'control-label'],
+                'attr' => [
+                    'rows' => 4,
+                    'placeholder' => trans('core/base::forms.description_placeholder'),
+                    'data-counter' => 2000,
+                ],
+            ], true);
+    }
+
+    return $form;
+}, 120, 2);
+
 

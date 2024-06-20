@@ -10,13 +10,13 @@
     <div class="listing-img-wrapper">
         <a href="{{ $property->url }}">
             @if($is_lazyload)
-                <img src="{{ get_image_loading() }}"
-                     data-src="{{ RvMedia::getImageUrl($property->image ?? '', 'full', false, RvMedia::getDefaultImage()) }}"
+                <img 
+                     src="{{ RvMedia::getImageUrl($property->image ?? '', 'full', false, RvMedia::getDefaultImage()) }}"
                      class="img-fluid mx-auto lazy" alt="{{ $property->name }}"/>
             @else
                 <img
                     src="{{ RvMedia::getImageUrl($property->image ?? '', 'full', false, RvMedia::getDefaultImage()) }}"
-                    class="img-fluid mx-auto" alt="{{ $property->name }}"/>
+                    class="img-fluid mx-auto ddsds" alt="{{ $property->name }}"/>
             @endif
             <span class="dark-overlay"></span>
 

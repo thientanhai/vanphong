@@ -16,7 +16,7 @@
             <div class="col-lg-8 col-md-8">
                 <div class="caption-wrap-content text-left">
                     <h1 class="text-light archive__title">{{ $category->name }}</h1>
-                    <span class="ipn-subtitle">{{ $category->description }}</span>
+                    <span class="ipn-subtitle hideen">{{ $category->description }}</span>
                     <div class="archive__breadcrumb left text-light">
                         {!! Theme::partial('breadcrumb') !!}
                     </div>

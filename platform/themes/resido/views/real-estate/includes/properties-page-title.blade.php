@@ -11,7 +11,7 @@
 
 
 @if($layout == 'full')
-    <div class="page-title">
+    <div class="page-title ss">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10 col-md-12">
@@ -76,7 +76,7 @@
         {!! Theme::partial('real-estate.properties.map-popup', ['property' => get_object_property_map()]) !!}
     </script>
 @else
-    <div class="page-title">
+    <div class="page-title property__search__title d-none">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12">
@@ -88,4 +88,24 @@
             </div>
         </div>
     </div>
-@endif
+
+
+    <section class="image-cover archive__cat__title property__search__title" 
+    data-overlay="5" 
+        style="background: url(&quot;https://vanphong.com.vn/storage/banners/agents-brokers.webp&quot;) no-repeat;">
+        <div class="container-fluid px-xl-5">
+           <div class="row justify-content-left">
+              <div class="col-lg-8 col-md-8">
+                 <div class="caption-wrap-content text-left">
+                    <h1 class="ipt-title">
+                        {{ __('Có :total tòa nhà phù hợp với nhu cầu của bạn', [
+                            'to' => $properties->lastItem(),
+                            'total' => $properties->total(),
+                        ]) }}
+                        </h1>                    
+                 </div>
+              </div>
+           </div>
+        </div>
+     </section>
+    @endif

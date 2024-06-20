@@ -35,7 +35,7 @@
             </div>
         </div>
 
-        <div class="property_block_wrap style-2">
+        <div class="property_block_wrap style-2 d-none">
             <div class="property_block_wrap_header"><a data-bs-toggle="collapse" data-parent="#features"
                     data-bs-target="#clOne2" aria-controls="clOne1" href="javascript:void(0);" aria-expanded="false"
                     class="collapsed">
@@ -122,8 +122,8 @@
     <div class="property_block_wrap style-2">
 
         <div class="property_block_wrap_header popular__cate__mb__header">
-            <a data-bs-toggle="collapse" data-parent="#features" data-bs-target="#clOne"
-                aria-controls="clOne" href="javascript:void(0);" aria-expanded="true" class="">
+            <a data-bs-toggle="collapse" data-parent="#features" data-bs-target="#clOne" aria-controls="clOne"
+                href="javascript:void(0);" aria-expanded="true" class="">
                 <h4 class="property_block_title">Văn phòng theo hạng</h4>
             </a>
         </div>
@@ -145,11 +145,11 @@
                 </ul>
             </div>
         </div>
-    
-    
-        <div class="property_block_wrap_header popular__cate__mb__header">
-            <a data-bs-toggle="collapse" data-parent="#features" data-bs-target="#clOne1"
-                aria-controls="clOne1" href="javascript:void(0);" aria-expanded="true" class="">
+
+
+        <div class="property_block_wrap_header popular__cate__mb__header d-none">
+            <a data-bs-toggle="collapse" data-parent="#features" data-bs-target="#clOne1" aria-controls="clOne1"
+                href="javascript:void(0);" aria-expanded="true" class="">
                 <h4 class="property_block_title">Văn phòng theo thành phố </h4>
             </a>
         </div>
@@ -168,8 +168,8 @@
         </div>
 
         <div class="property_block_wrap_header popular__cate__mb__header">
-            <a data-bs-toggle="collapse" data-parent="#features" data-bs-target="#clOne2"
-                aria-controls="clOne2" href="javascript:void(0);" aria-expanded="true" class="">
+            <a data-bs-toggle="collapse" data-parent="#features" data-bs-target="#clOne2" aria-controls="clOne2"
+                href="javascript:void(0);" aria-expanded="true" class="">
                 <h4 class="property_block_title">Văn phòng theo quận </h4>
             </a>
         </div>
@@ -204,8 +204,33 @@
 
 <!-- ============================ Footer Start ================================== -->
 <footer class="dark-footer skin-dark-footer footer__wrapper bg-dark">
-    <div class="py-lg-5 py-sm-2">
+    <div class="py-lg-3 py-sm-2">
         <div class="container-fluid px-lg-5 px-sm-2">
+            {{-- <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    @if (theme_option('logo_white'))
+                        <img src="{{ RvMedia::getImageUrl(theme_option('logo_white')) }}" class="img-footer"
+                        style="max-height: 38px" alt="{{ theme_option('site_name') }}">
+                    @endif
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    @if (theme_option('address'))
+                        <p><i class="fas fa-map-marker-alt"></i> {{ theme_option('address') }}</p>
+                    @endif
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    @if (theme_option('hotline'))
+                        <p><i class="fas fa-phone-square"></i> {{ theme_option('hotline') }}</p>
+                    @endif
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    @if (theme_option('email'))
+                        <p><i class="fas fa-envelope"></i> {{ theme_option('email') }}</p>
+                    @endif
+                </div>
+            </div> --}}
+
+
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="footer-widget">
@@ -228,38 +253,70 @@
                                 </ul>
                             @endif
                         </div>
-                        {{-- <div class="footer-add">
-                            <div class="company__name">
-                                <h2 class="text__black text-white">
-                                    CÔNG TY CỔ PHẦN GLOBAL GOLDEN ANT
-                                </h2>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="row">
+                        {!! dynamic_sidebar('footer_sidebar_2') !!}
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    {!! dynamic_sidebar('footer_sidebar_3') !!}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="block__contact py-4 px-4">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4 col-md-4">
+                    <div class="middle-icon-features-item">
+                        <div class="icon-features-wrap">
+                            <div class="middle-icon-large-features-box f-light-success">
+                                <i class="ti-receipt text-main"></i>
                             </div>
+                        </div>
+                        <div class="middle-icon-features-content">
+                            <h4>Địa chỉ</h4>
                             @if (theme_option('address'))
-                                <p><i class="fas fa-map-marker-alt"></i> {{ theme_option('address') }}</p>
+                                <p>{{ theme_option('address') }}</p>
                             @endif
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <div class="middle-icon-features-item">
+                        <div class="icon-features-wrap">
+                            <div class="middle-icon-large-features-box f-light-warning"><i
+                                    class="ti-user text-warning"></i></div>
+
+                        </div>
+                        <div class="middle-icon-features-content">
+                            <h4>Support</h4>
+                            @if (theme_option('email'))
+                                <p>{{ theme_option('email') }}</p>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <div class="middle-icon-features-item remove">
+                        <div class="icon-features-wrap">
+                            <div class="middle-icon-large-features-box f-light-blue">
+                                <i
+                                    class="ti-shield text-blue"></i></div>
+                        </div>
+
+                        <div class="middle-icon-features-content">
+                            <h4>Hotline</h4>
                             @if (theme_option('hotline'))
                                 <p><i class="fas fa-phone-square"></i> {{ theme_option('hotline') }}</p>
                             @endif
-                            @if (theme_option('email'))
-                                <p><i class="fas fa-envelope"></i> {{ theme_option('email') }}</p>
-                            @endif
-                        </div> --}}
-
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-5 col-md-6">
-                    <div class="row">
-                        {!! dynamic_sidebar('footer_sidebar_1') !!}
-                        {!! dynamic_sidebar('footer_sidebar_2') !!}
-                        {{-- {!! dynamic_sidebar('footer_sidebar_3') !!} --}}
-                    </div>
-                </div>
-
-                {{-- <div class="col-lg-3 col-md-6">
-                   sdsds
-                </div> --}}
-
-
             </div>
         </div>
     </div>

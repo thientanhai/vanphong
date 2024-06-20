@@ -9,7 +9,7 @@ class DescriptionFieldOption extends TextareaFieldOption
         return parent::make()
             ->label(trans('core/base::forms.description'))
             ->placeholder(trans('core/base::forms.description_placeholder'))
-            ->maxLength(400)
+            ->maxLength(4000)
             ->rows(4);
     }
 }

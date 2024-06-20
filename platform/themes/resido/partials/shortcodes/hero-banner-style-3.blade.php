@@ -48,18 +48,41 @@
         </div>
         <div class="home__bottom__content">
             <div class="benefits__group">
-                <div class="content">
-                    <span class="text-base font-semibold">1,150,000+</span>
-                    <span class="text-base">Properties</span>
-                </div>
-                <div class="content">
-                    <span class="text-base font-semibold">1,150,000+</span>
-                    <span class="text-base">Properties</span>
-                </div>
-                <div class="content">
-                    <span class="text-base font-semibold">1,150,000+</span>
-                    <span class="text-base">Properties</span>
-                </div>
+                @if (theme_option('banner_bottom_content'))
+                @php
+                    $contentData = get_repeat_field('banner_bottom_content');
+                    $contentData = collect($contentData)->map(function($item) {
+                        // Initialize variables to store detected values
+                        $textValue = null;
+                        $numberValue = null;
+            
+                        // Iterate over each item to detect "text" and "number_value" keys
+                        foreach ($item as $field) {
+                            if ($field['key'] === 'text') {
+                                $textValue = $field['value'];
+                            } elseif ($field['key'] === 'number_value') {
+                                $numberValue = $field['value'];
+                            }
+                        }
+            
+                        // Return detected values
+                        return [
+                            'text' => $textValue,
+                            'number_value' => $numberValue
+                        ];
+                    });
+                @endphp
+            
+                @if($contentData->isNotEmpty())
+                    @foreach ($contentData as $item)
+                        <div class="content">
+                            <span class="text-base font-semibold">{{ $item['text'] }}</span>
+                            <span class="text-base">{{ $item['number_value'] }}</span>
+                        </div>
+                    @endforeach
+                @endif
+            @endif
+            
             </div>
         </div>
     </div>

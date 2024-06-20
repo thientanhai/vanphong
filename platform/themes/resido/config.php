@@ -51,7 +51,7 @@ return [
 
             // You may use this event to set up your assets.
 
-            $theme->asset()->usePath()->add('animation-css', 'plugins/animation.css');
+            // $theme->asset()->usePath()->add('animation-css', 'plugins/animation.css');
             $theme->asset()->usePath()->add('bootstrap-css', 'plugins/bootstrap/bootstrap.min.css');
             $theme->asset()->usePath()->add('rangeSlider-css', 'plugins/ion.rangeSlider.min.css');
             $theme->asset()->usePath()->add('dropzone-css', 'plugins/dropzone.css');
@@ -79,7 +79,7 @@ return [
             $theme->asset()->container('footer')->usePath()->add('select2-js', 'plugins/select2.min.js');
             $theme->asset()->container('footer')->usePath()->add('magnific-popup-js', 'plugins/jquery.magnific-popup.min.js');
             $theme->asset()->container('footer')->usePath()->add('slick-js', 'plugins/slick.js');
-            $theme->asset()->container('footer')->usePath()->add('swiper-js', 'plugins/swiper-bundle.min.js');
+            // $theme->asset()->container('footer')->usePath()->add('swiper-js', 'plugins/swiper-bundle.min.js');
             $theme->asset()->container('footer')->usePath()->add('slider-bg-js', 'plugins/slider-bg.js');
             $theme->asset()->container('footer')->usePath()->add('lightbox-js', 'plugins/lightbox.js');
             $theme->asset()->container('footer')->usePath()->add('imagesloaded-js', 'plugins/imagesloaded.js');

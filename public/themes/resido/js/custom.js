@@ -138,3 +138,36 @@ const largeSlider = ()=>{
 	})
 }
 window.addEventListener('load', largeSlider)
+
+jQuery(document).ready(function() {
+  jQuery('.property-listing .listing-img-wrapper img').each(function() {
+      var dataSrc = $(this).attr('data-src');
+      if (dataSrc) {
+          $(this).attr('src', dataSrc);
+      }
+  });
+
+
+  //sticky sidebar
+  
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  const images = document.querySelectorAll('img[data-src]');
+  images.forEach(img => {
+      img.src = img.getAttribute('data-src');
+  });
+});
+
+
+// // Link to the library 
+// // https://github.com/kovart/sticksy
+
+// var stickyEl = new Sticksy('.js-sticky-widget', {
+// 	topSpacing: 60
+// })
+
+// stickyEl.onStateChanged = function (state) {
+// 	if (state === 'fixed') stickyEl.nodeRef.classList.add('widget--sticky')
+// 	else stickyEl.nodeRef.classList.remove('widget--sticky')
+// }
