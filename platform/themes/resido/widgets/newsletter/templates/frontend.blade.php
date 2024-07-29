@@ -7,10 +7,11 @@
         @if (!empty($config['subname']))
             <h3 class="font-heading">{{ $config['subname'] }}</h3>
         @endif
-    </div>
-    <form class="form-subcriber newsletter-form mt-30" action="{{ route('public.newsletter.subscribe') }}" method="post">
+    <form class="form-subcriber newsletter-form mt-30 newsletter__footer" action="{{ route('public.newsletter.subscribe') }}" method="post">
         @csrf
-        <div class="form-group d-flex">
+        <div class="form-group d-block">
+            <input type="name" name="email" class="form-control bg-white font-small" placeholder="{{ __('Tên') }}">
+
             <input type="email" name="email" class="form-control bg-white font-small" placeholder="{{ __('Enter your email') }}">
             <button class="btn bg-dark text-white" type="submit">{{ __('Subscribe') }}</button>
         </div>

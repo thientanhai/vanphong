@@ -82,7 +82,7 @@
                         data-ll-status="loaded">
                     </span>
                 </span>
-                <div class="info"><strong>Đỗ ô tô </strong><span>{!! $carFee !!}$</span></div>
+                <div class="info"><strong>Đỗ ô tô </strong><span>{!! $carFee !!}</span></div>
             </li>
             @endif
 

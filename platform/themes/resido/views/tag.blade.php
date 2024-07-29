@@ -42,7 +42,7 @@
                 </div>
             </div>
             <br>
-            <div class="pagination">
+            <div class="pagination tttttt">
                 {!! $posts->withQueryString()->links() !!}
             </div>
         </div>

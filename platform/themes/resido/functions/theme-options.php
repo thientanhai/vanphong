@@ -127,48 +127,48 @@ app()->booted(function () {
                 ],
             ],
         ])
-        ->setSection([
-            'title' => __('Style'),
-            'desc' => __('Style of page'),
-            'id' => 'opt-text-subsection-style',
-            'subsection' => true,
-            'icon' => 'fa fa-bars',
-        ])
-        ->setField([
-            'id' => 'skin',
-            'section_id' => 'opt-text-subsection-style',
-            'type' => 'select',
-            'label' => __('Skin'),
-            'attributes' => [
-                'name' => 'skin',
-                'list' => [
-                    'red-skin' => __('Red skin'),
-                    'green-skin' => __('Green skin'),
-                    'blue-skin' => __('Blue skin'),
-                    'yellow-skin' => __('Yellow skin'),
-                    'darkblue-skin' => __('Darkblue skin'),
-                    'oceangreen-skin' => __('Oceangreen skin'),
-                    'purple-skin' => __('Purple skin'),
-                    'goodred-skin' => __('Goodred skin'),
-                    'goodgreen-skin' => __('Goodgreen skin'),
-                    'blue2-skin' => __('Blue 2 skin'),
-                ],
-                'value' => 'yes',
-                'options' => [
-                    'class' => 'form-control',
-                ],
-            ],
-        ])
-        ->setField([
-            'id' => 'primary_color',
-            'section_id' => 'opt-text-subsection-general',
-            'type' => 'customColor',
-            'label' => __('Primary color'),
-            'attributes' => [
-                'name' => 'primary_color',
-                'value' => '#2b4db9',
-            ],
-        ])
+        // ->setSection([
+        //     'title' => __('Style'),
+        //     'desc' => __('Style of page'),
+        //     'id' => 'opt-text-subsection-style',
+        //     'subsection' => true,
+        //     'icon' => 'fa fa-bars',
+        // ])
+        // ->setField([
+        //     'id' => 'skin',
+        //     'section_id' => 'opt-text-subsection-style',
+        //     'type' => 'select',
+        //     'label' => __('Skin'),
+        //     'attributes' => [
+        //         'name' => 'skin',
+        //         'list' => [
+        //             'red-skin' => __('Red skin'),
+        //             'green-skin' => __('Green skin'),
+        //             'blue-skin' => __('Blue skin'),
+        //             'yellow-skin' => __('Yellow skin'),
+        //             'darkblue-skin' => __('Darkblue skin'),
+        //             'oceangreen-skin' => __('Oceangreen skin'),
+        //             'purple-skin' => __('Purple skin'),
+        //             'goodred-skin' => __('Goodred skin'),
+        //             'goodgreen-skin' => __('Goodgreen skin'),
+        //             'blue2-skin' => __('Blue 2 skin'),
+        //         ],
+        //         'value' => 'yes',
+        //         'options' => [
+        //             'class' => 'form-control',
+        //         ],
+        //     ],
+        // ])
+        // ->setField([
+        //     'id' => 'primary_color',
+        //     'section_id' => 'opt-text-subsection-general',
+        //     'type' => 'customColor',
+        //     'label' => __('Primary color'),
+        //     'attributes' => [
+        //         'name' => 'primary_color',
+        //         'value' => '#2b4db9',
+        //     ],
+        // ])
         ->setField([
             'id' => 'font_heading',
             'section_id' => 'opt-text-subsection-style',
@@ -242,136 +242,224 @@ app()->booted(function () {
                 ],
             ],
         ])
+        //add section quận huyện 
         ->setSection([
-            'title' => __('Content'),
-            'desc' => __('Theme options for content'),
-            'id' => 'opt-text-subsection-homepage',
+            'title' => __('Văn phòng theo hạng'),
+            'desc' => __('Hạng văn phòng footer'),
+            'id' => 'opt-text-subsection-office-types',
             'subsection' => true,
             'icon' => 'fa fa-edit',
-            'fields' => [
-                [
-                    'id' => 'number_of_featured_cities',
-                    'type' => 'number',
-                    'label' => __('Number of featured cities on homepage'),
-                    'attributes' => [
-                        'name' => 'number_of_featured_cities',
-                        'value' => 10,
-                        'options' => [
-                            'class' => 'form-control',
+        ])
+        ->setField([
+            'id' => 'office_types',
+            'section_id' => 'opt-text-subsection-office-types',
+            'type' => 'repeater',
+            'label' => __('Văn phòng theo hạng'),
+            'attributes' => [
+                'name' => 'office_types',
+                'value' => null,
+                'fields' => [
+                    [
+                        'type' => 'text',
+                        'label' => __('Name'),
+                        'attributes' => [
+                            'name' => 'office-types-name',
+                            'value' => null,
+                            'options' => [
+                                'class' => 'form-control',
+                            ],
                         ],
                     ],
-                ],
-                [
-                    'id' => 'number_of_properties_for_sale',
-                    'type' => 'number',
-                    'label' => __('Number of properties for sale on homepage'),
-                    'attributes' => [
-                        'name' => 'number_of_properties_for_sale',
-                        'value' => 8,
-                        'options' => [
-                            'class' => 'form-control',
-                        ],
-                    ],
-                ],
-                [
-                    'id' => 'number_of_properties_for_rent',
-                    'type' => 'number',
-                    'label' => __('Number of properties for rent on homepage'),
-                    'attributes' => [
-                        'name' => 'number_of_properties_for_rent',
-                        'value' => 8,
-                        'options' => [
-                            'class' => 'form-control',
-                        ],
-                    ],
-                ],
-                [
-                    'id' => 'number_of_properties_per_page',
-                    'type' => 'number',
-                    'label' => __('Number of properties per page'),
-                    'attributes' => [
-                        'name' => 'number_of_properties_per_page',
-                        'value' => 15,
-                        'options' => [
-                            'class' => 'form-control',
-                        ],
-                    ],
-                ],
-                [
-                    'id' => 'number_of_related_properties',
-                    'type' => 'number',
-                    'label' => __('Number of related properties'),
-                    'attributes' => [
-                        'name' => 'number_of_related_properties',
-                        'value' => 8,
-                        'options' => [
-                            'class' => 'form-control',
-                        ],
-                    ],
-                ],
-                [
-                    'id' => 'number_of_recently_viewed_properties',
-                    'type' => 'number',
-                    'label' => __('Number of recently viewed properties'),
-                    'attributes' => [
-                        'name' => 'number_of_recently_viewed_properties',
-                        'value' => 3,
-                        'options' => [
-                            'class' => 'form-control',
-                        ],
-                    ],
-                ],
-                [
-                    'id' => 'home_banner_description',
-                    'type' => 'text',
-                    'label' => __('The description for banner search block'),
-                    'attributes' => [
-                        'name' => 'home_banner_description',
-                        'value' => null,
-                        'options' => [
-                            'class' => 'form-control',
-                        ],
-                    ],
-                ],
-                [
-                    'id' => 'home_banner',
-                    'type' => 'mediaImage',
-                    'label' => __('Top banner homepage'),
-                    'attributes' => [
-                        'name' => 'home_banner',
-                        'value' => null,
-                    ],
-                ],
-                [
-                    'id' => 'properties_description',
-                    'type' => 'textarea',
-                    'label' => __('The description for properties block'),
-                    'attributes' => [
-                        'name' => 'properties_description',
-                        'value' => null,
-                        'options' => [
-                            'class' => 'form-control',
-                        ],
-                    ],
-                ],
-                [
-                    'id' => 'enable_header_slider_homepage_auto_slide',
-                    'type' => 'select',
-                    'label' => __('Enable header slider homepage auto slide'),
-                    'attributes' => [
-                        'name' => 'enable_header_slider_homepage_auto_slide',
-                        'list' => [
-                            'yes' => trans('core/base::base.yes'),
-                            'no' => trans('core/base::base.no'),
-                        ],
-                        'value' => 'no',
-                        'options' => [
-                            'class' => 'form-control',
+                    [
+                        'type' => 'text',
+                        'label' => __('URL'),
+                        'attributes' => [
+                            'name' => 'office-types-url',
+                            'value' => null,
+                            'options' => [
+                                'class' => 'form-control',
+                            ],
                         ],
                     ],
                 ],
             ],
         ])
+
+
+        //add section quận huyện 
+        ->setSection([
+            'title' => __('Văn phòng theo quận'),
+            'desc' => __('Văn phòng theo quận footer'),
+            'id' => 'opt-text-subsection-office-districts',
+            'subsection' => true,
+            'icon' => 'fa fa-map-marker-alt',
+        ])
+        ->setField([
+            'id' => 'office_districts',
+            'section_id' => 'opt-text-subsection-office-districts',
+            'type' => 'repeater',
+            'label' => __('Văn phòng theo quận'),
+            'attributes' => [
+                'name' => 'office_districts',
+                'value' => null,
+                'fields' => [
+                    [
+                        'type' => 'text',
+                        'label' => __('Name'),
+                        'attributes' => [
+                            'name' => 'office-districts-name',
+                            'value' => null,
+                            'options' => [
+                                'class' => 'form-control',
+                            ],
+                        ],
+                    ],
+                    [
+                        'type' => 'text',
+                        'label' => __('URL'),
+                        'attributes' => [
+                            'name' => 'office-districts-url',
+                            'value' => null,
+                            'options' => [
+                                'class' => 'form-control',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ])
+
+
+        // ->setSection([
+        //     'title' => __('Content'),
+        //     'desc' => __('Theme options for content'),
+        //     'id' => 'opt-text-subsection-homepage',
+        //     'subsection' => true,
+        //     'icon' => 'fa fa-edit',
+        //     'fields' => [
+        //         [
+        //             'id' => 'number_of_featured_cities',
+        //             'type' => 'number',
+        //             'label' => __('Number of featured cities on homepage'),
+        //             'attributes' => [
+        //                 'name' => 'number_of_featured_cities',
+        //                 'value' => 10,
+        //                 'options' => [
+        //                     'class' => 'form-control',
+        //                 ],
+        //             ],
+        //         ],
+        //         [
+        //             'id' => 'number_of_properties_for_sale',
+        //             'type' => 'number',
+        //             'label' => __('Number of properties for sale on homepage'),
+        //             'attributes' => [
+        //                 'name' => 'number_of_properties_for_sale',
+        //                 'value' => 8,
+        //                 'options' => [
+        //                     'class' => 'form-control',
+        //                 ],
+        //             ],
+        //         ],
+        //         [
+        //             'id' => 'number_of_properties_for_rent',
+        //             'type' => 'number',
+        //             'label' => __('Number of properties for rent on homepage'),
+        //             'attributes' => [
+        //                 'name' => 'number_of_properties_for_rent',
+        //                 'value' => 8,
+        //                 'options' => [
+        //                     'class' => 'form-control',
+        //                 ],
+        //             ],
+        //         ],
+        //         [
+        //             'id' => 'number_of_properties_per_page',
+        //             'type' => 'number',
+        //             'label' => __('Number of properties per page'),
+        //             'attributes' => [
+        //                 'name' => 'number_of_properties_per_page',
+        //                 'value' => 15,
+        //                 'options' => [
+        //                     'class' => 'form-control',
+        //                 ],
+        //             ],
+        //         ],
+        //         [
+        //             'id' => 'number_of_related_properties',
+        //             'type' => 'number',
+        //             'label' => __('Number of related properties'),
+        //             'attributes' => [
+        //                 'name' => 'number_of_related_properties',
+        //                 'value' => 8,
+        //                 'options' => [
+        //                     'class' => 'form-control',
+        //                 ],
+        //             ],
+        //         ],
+        //         [
+        //             'id' => 'number_of_recently_viewed_properties',
+        //             'type' => 'number',
+        //             'label' => __('Number of recently viewed properties'),
+        //             'attributes' => [
+        //                 'name' => 'number_of_recently_viewed_properties',
+        //                 'value' => 3,
+        //                 'options' => [
+        //                     'class' => 'form-control',
+        //                 ],
+        //             ],
+        //         ],
+        //         [
+        //             'id' => 'home_banner_description',
+        //             'type' => 'text',
+        //             'label' => __('The description for banner search block'),
+        //             'attributes' => [
+        //                 'name' => 'home_banner_description',
+        //                 'value' => null,
+        //                 'options' => [
+        //                     'class' => 'form-control',
+        //                 ],
+        //             ],
+        //         ],
+        //         [
+        //             'id' => 'home_banner',
+        //             'type' => 'mediaImage',
+        //             'label' => __('Top banner homepage'),
+        //             'attributes' => [
+        //                 'name' => 'home_banner',
+        //                 'value' => null,
+        //             ],
+        //         ],
+        //         [
+        //             'id' => 'properties_description',
+        //             'type' => 'textarea',
+        //             'label' => __('The description for properties block'),
+        //             'attributes' => [
+        //                 'name' => 'properties_description',
+        //                 'value' => null,
+        //                 'options' => [
+        //                     'class' => 'form-control',
+        //                 ],
+        //             ],
+        //         ],
+        //         [
+        //             'id' => 'enable_header_slider_homepage_auto_slide',
+        //             'type' => 'select',
+        //             'label' => __('Enable header slider homepage auto slide'),
+        //             'attributes' => [
+        //                 'name' => 'enable_header_slider_homepage_auto_slide',
+        //                 'list' => [
+        //                     'yes' => trans('core/base::base.yes'),
+        //                     'no' => trans('core/base::base.no'),
+        //                 ],
+        //                 'value' => 'no',
+        //                 'options' => [
+        //                     'class' => 'form-control',
+        //                 ],
+        //             ],
+        //         ],
+        //     ],
+        // ])
         ->setField([
             'id' => 'logo_white',
             'section_id' => 'opt-text-subsection-logo',
@@ -398,210 +486,210 @@ app()->booted(function () {
                 ],
             ],
         ])
-        ->setSection([
-            'title' => __('Real estate'),
-            'desc' => __('Real estate'),
-            'id' => 'es-state',
-            'subsection' => false,
-            'icon' => 'fa fa-info-circle',
-            'fields' => [],
-        ])
-        ->setField([
-            'id' => 'properties_page_layout',
-            'section_id' => 'es-state',
-            'label' => __('Properties layouts'),
-            'type' => 'select',
-            'attributes' => [
-                'name' => 'properties_page_layout',
-                'list' => ['' => trans('plugins/blog::base.select')] + get_properties_page_layout(),
-                'value' => '',
-                'options' => [
-                    'class' => 'form-control',
-                ],
-            ],
-        ])
-        ->setField([
-            'id' => 'property_header_layout',
-            'section_id' => 'es-state',
-            'label' => __('Property header layouts'),
-            'type' => 'select',
-            'attributes' => [
-                'name' => 'property_header_layout',
-                'list' => ['' => trans('plugins/blog::base.select')] + get_single_header_layout(),
-                'value' => 'layout-1',
-                'options' => [
-                    'class' => 'form-control',
-                ],
-            ],
-        ])
-        ->setField([
-            'id' => 'allow_share_via_whatsapp',
-            'section_id' => 'es-state',
-            'type' => 'select',
-            'label' => __('Allow share property via Whatsapp?'),
-            'attributes' => [
-                'name' => 'allow_share_via_whatsapp',
-                'list' => [
-                    'yes' => trans('core/base::base.yes'),
-                    'no' => trans('core/base::base.no'),
-                ],
-                'value' => 'no',
-                'options' => [
-                    'class' => 'form-control',
-                ],
-            ],
-        ])
-        ->setField([
-            'id' => 'is_available_for_one_country',
-            'section_id' => 'es-state',
-            'type' => 'select',
-            'label' => __('Is the website only available in one country?'),
-            'attributes' => [
-                'name' => 'is_available_for_one_country',
-                'list' => [
-                    'yes' => trans('core/base::base.yes'),
-                    'no' => trans('core/base::base.no'),
-                ],
-                'value' => 'no',
-                'options' => [
-                    'class' => 'form-control',
-                ],
-            ],
-        ])
-        ->setField([
-            'id' => 'min_price',
-            'section_id' => 'es-state',
-            'type' => 'repeater',
-            'label' => __('Min price'),
-            'attributes' => [
-                'name' => 'min_price',
-                'value' => null,
-                'fields' => [
-                    [
-                        'type' => 'text',
-                        'label' => __('Label'),
-                        'attributes' => [
-                            'name' => 'key',
-                            'value' => null,
-                            'options' => [
-                                'class' => 'form-control',
-                            ],
-                        ],
-                    ],
-                    [
-                        'type' => 'text',
-                        'label' => __('Value'),
-                        'attributes' => [
-                            'name' => 'value',
-                            'value' => null,
-                            'options' => [
-                                'class' => 'form-control',
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ])->setField([
-            'id' => 'max_price',
-            'section_id' => 'es-state',
-            'type' => 'repeater',
-            'label' => __('Max price'),
-            'attributes' => [
-                'name' => 'max_price',
-                'value' => null,
-                'fields' => [
-                    [
-                        'type' => 'text',
-                        'label' => __('Label'),
-                        'attributes' => [
-                            'name' => 'key',
-                            'value' => null,
-                            'options' => [
-                                'class' => 'form-control',
-                            ],
-                        ],
-                    ],
-                    [
-                        'type' => 'text',
-                        'label' => __('Value'),
-                        'attributes' => [
-                            'name' => 'value',
-                            'value' => null,
-                            'options' => [
-                                'class' => 'form-control',
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ])
-        ->setField([
-            'id' => 'bedroom',
-            'section_id' => 'es-state',
-            'type' => 'repeater',
-            'label' => __('Bed Rooms'),
-            'attributes' => [
-                'name' => 'bedroom',
-                'value' => null,
-                'fields' => [
-                    [
-                        'type' => 'text',
-                        'label' => __('Label'),
-                        'attributes' => [
-                            'name' => 'key',
-                            'value' => null,
-                            'options' => [
-                                'class' => 'form-control',
-                            ],
-                        ],
-                    ],
-                    [
-                        'type' => 'text',
-                        'label' => __('Value'),
-                        'attributes' => [
-                            'name' => 'value',
-                            'value' => null,
-                            'options' => [
-                                'class' => 'form-control',
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ])->setField([
-            'id' => 'bathroom',
-            'section_id' => 'es-state',
-            'type' => 'repeater',
-            'label' => __('Bath Rooms'),
-            'attributes' => [
-                'name' => 'bathroom',
-                'value' => null,
-                'fields' => [
-                    [
-                        'type' => 'text',
-                        'label' => __('Label'),
-                        'attributes' => [
-                            'name' => 'key',
-                            'value' => null,
-                            'options' => [
-                                'class' => 'form-control',
-                            ],
-                        ],
-                    ],
-                    [
-                        'type' => 'text',
-                        'label' => __('Value'),
-                        'attributes' => [
-                            'name' => 'value',
-                            'value' => null,
-                            'options' => [
-                                'class' => 'form-control',
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ])
+        // ->setSection([
+        //     'title' => __('Real estate'),
+        //     'desc' => __('Real estate'),
+        //     'id' => 'es-state',
+        //     'subsection' => false,
+        //     'icon' => 'fa fa-info-circle',
+        //     'fields' => [],
+        // ])
+        // ->setField([
+        //     'id' => 'properties_page_layout',
+        //     'section_id' => 'es-state',
+        //     'label' => __('Properties layouts'),
+        //     'type' => 'select',
+        //     'attributes' => [
+        //         'name' => 'properties_page_layout',
+        //         'list' => ['' => trans('plugins/blog::base.select')] + get_properties_page_layout(),
+        //         'value' => '',
+        //         'options' => [
+        //             'class' => 'form-control',
+        //         ],
+        //     ],
+        // ])
+        // ->setField([
+        //     'id' => 'property_header_layout',
+        //     'section_id' => 'es-state',
+        //     'label' => __('Property header layouts'),
+        //     'type' => 'select',
+        //     'attributes' => [
+        //         'name' => 'property_header_layout',
+        //         'list' => ['' => trans('plugins/blog::base.select')] + get_single_header_layout(),
+        //         'value' => 'layout-1',
+        //         'options' => [
+        //             'class' => 'form-control',
+        //         ],
+        //     ],
+        // ])
+        // ->setField([
+        //     'id' => 'allow_share_via_whatsapp',
+        //     'section_id' => 'es-state',
+        //     'type' => 'select',
+        //     'label' => __('Allow share property via Whatsapp?'),
+        //     'attributes' => [
+        //         'name' => 'allow_share_via_whatsapp',
+        //         'list' => [
+        //             'yes' => trans('core/base::base.yes'),
+        //             'no' => trans('core/base::base.no'),
+        //         ],
+        //         'value' => 'no',
+        //         'options' => [
+        //             'class' => 'form-control',
+        //         ],
+        //     ],
+        // ])
+        // ->setField([
+        //     'id' => 'is_available_for_one_country',
+        //     'section_id' => 'es-state',
+        //     'type' => 'select',
+        //     'label' => __('Is the website only available in one country?'),
+        //     'attributes' => [
+        //         'name' => 'is_available_for_one_country',
+        //         'list' => [
+        //             'yes' => trans('core/base::base.yes'),
+        //             'no' => trans('core/base::base.no'),
+        //         ],
+        //         'value' => 'no',
+        //         'options' => [
+        //             'class' => 'form-control',
+        //         ],
+        //     ],
+        // ])
+        // ->setField([
+        //     'id' => 'min_price',
+        //     'section_id' => 'es-state',
+        //     'type' => 'repeater',
+        //     'label' => __('Min price'),
+        //     'attributes' => [
+        //         'name' => 'min_price',
+        //         'value' => null,
+        //         'fields' => [
+        //             [
+        //                 'type' => 'text',
+        //                 'label' => __('Label'),
+        //                 'attributes' => [
+        //                     'name' => 'key',
+        //                     'value' => null,
+        //                     'options' => [
+        //                         'class' => 'form-control',
+        //                     ],
+        //                 ],
+        //             ],
+        //             [
+        //                 'type' => 'text',
+        //                 'label' => __('Value'),
+        //                 'attributes' => [
+        //                     'name' => 'value',
+        //                     'value' => null,
+        //                     'options' => [
+        //                         'class' => 'form-control',
+        //                     ],
+        //                 ],
+        //             ],
+        //         ],
+        //     ],
+        // ])->setField([
+        //     'id' => 'max_price',
+        //     'section_id' => 'es-state',
+        //     'type' => 'repeater',
+        //     'label' => __('Max price'),
+        //     'attributes' => [
+        //         'name' => 'max_price',
+        //         'value' => null,
+        //         'fields' => [
+        //             [
+        //                 'type' => 'text',
+        //                 'label' => __('Label'),
+        //                 'attributes' => [
+        //                     'name' => 'key',
+        //                     'value' => null,
+        //                     'options' => [
+        //                         'class' => 'form-control',
+        //                     ],
+        //                 ],
+        //             ],
+        //             [
+        //                 'type' => 'text',
+        //                 'label' => __('Value'),
+        //                 'attributes' => [
+        //                     'name' => 'value',
+        //                     'value' => null,
+        //                     'options' => [
+        //                         'class' => 'form-control',
+        //                     ],
+        //                 ],
+        //             ],
+        //         ],
+        //     ],
+        // ])
+        // ->setField([
+        //     'id' => 'bedroom',
+        //     'section_id' => 'es-state',
+        //     'type' => 'repeater',
+        //     'label' => __('Bed Rooms'),
+        //     'attributes' => [
+        //         'name' => 'bedroom',
+        //         'value' => null,
+        //         'fields' => [
+        //             [
+        //                 'type' => 'text',
+        //                 'label' => __('Label'),
+        //                 'attributes' => [
+        //                     'name' => 'key',
+        //                     'value' => null,
+        //                     'options' => [
+        //                         'class' => 'form-control',
+        //                     ],
+        //                 ],
+        //             ],
+        //             [
+        //                 'type' => 'text',
+        //                 'label' => __('Value'),
+        //                 'attributes' => [
+        //                     'name' => 'value',
+        //                     'value' => null,
+        //                     'options' => [
+        //                         'class' => 'form-control',
+        //                     ],
+        //                 ],
+        //             ],
+        //         ],
+        //     ],
+        // ])->setField([
+        //     'id' => 'bathroom',
+        //     'section_id' => 'es-state',
+        //     'type' => 'repeater',
+        //     'label' => __('Bath Rooms'),
+        //     'attributes' => [
+        //         'name' => 'bathroom',
+        //         'value' => null,
+        //         'fields' => [
+        //             [
+        //                 'type' => 'text',
+        //                 'label' => __('Label'),
+        //                 'attributes' => [
+        //                     'name' => 'key',
+        //                     'value' => null,
+        //                     'options' => [
+        //                         'class' => 'form-control',
+        //                     ],
+        //                 ],
+        //             ],
+        //             [
+        //                 'type' => 'text',
+        //                 'label' => __('Value'),
+        //                 'attributes' => [
+        //                     'name' => 'value',
+        //                     'value' => null,
+        //                     'options' => [
+        //                         'class' => 'form-control',
+        //                     ],
+        //                 ],
+        //             ],
+        //         ],
+        //     ],
+        // ])
         ->setSection([
             'title' => __('Home page configure'),
             'desc' => __('Home page configure'),

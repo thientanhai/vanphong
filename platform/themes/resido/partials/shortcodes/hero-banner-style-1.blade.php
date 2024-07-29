@@ -19,7 +19,7 @@
                         </div>
                     </div>
 
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>{{ __('Min Price') }}</label>
@@ -32,9 +32,9 @@
                                 {!! Theme::partial('real-estate.filters.max-price') !!}
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>{{ __('Property Type') }}</label>
@@ -47,7 +47,7 @@
                                 {!! Theme::partial('real-estate.filters.bedrooms') !!}
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12">

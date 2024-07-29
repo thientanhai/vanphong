@@ -238,7 +238,7 @@ class RealEstateHelper
             'order_by' => ['re_properties.created_at' => 'DESC'],
             'with' => RealEstateHelper::getPropertyRelationsQuery(),
         ], $extra);
-
+       
         return app(PropertyInterface::class)->getProperties($filters, $params);
     }
 

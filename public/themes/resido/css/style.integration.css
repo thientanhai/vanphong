@@ -3,12 +3,12 @@
     position: relative;
 }
 [data-overlay]:before {
-    background: linear-gradient(180deg, rgba(20, 24, 32, 0) 63.43%, rgba(20, 24, 32, .8)), rgba(20, 24, 32, .5);
+    background: linear-gradient(180deg, rgba(20, 24, 32, 0) 63.43%, rgba(20, 24, 32, .8)), rgb(20 24 32 / 69%);
     content: "";
     height: 100%;
     left: 0;
     position: absolute;
-    opacity: !important;
+    opacity:1!important;
     top: 0;
     width: 100%;
     z-index: 1;

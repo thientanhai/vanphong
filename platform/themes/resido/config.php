@@ -79,7 +79,7 @@ return [
             $theme->asset()->container('footer')->usePath()->add('select2-js', 'plugins/select2.min.js');
             $theme->asset()->container('footer')->usePath()->add('magnific-popup-js', 'plugins/jquery.magnific-popup.min.js');
             $theme->asset()->container('footer')->usePath()->add('slick-js', 'plugins/slick.js');
-            // $theme->asset()->container('footer')->usePath()->add('swiper-js', 'plugins/swiper-bundle.min.js');
+            $theme->asset()->container('footer')->usePath()->add('swiper-js', 'plugins/swiper-bundle.min.js');
             $theme->asset()->container('footer')->usePath()->add('slider-bg-js', 'plugins/slider-bg.js');
             $theme->asset()->container('footer')->usePath()->add('lightbox-js', 'plugins/lightbox.js');
             $theme->asset()->container('footer')->usePath()->add('imagesloaded-js', 'plugins/imagesloaded.js');
@@ -90,7 +90,7 @@ return [
             $theme->asset()->container('footer')->usePath()->add('wishlist', 'js/wishlist.js', [], [], $version);
             $theme->asset()->container('footer')->usePath()->add('app-js', 'js/app.js', [], [], $version);
             $theme->asset()->container('footer')->usePath()->add('custom-js', 'js/custom.js', [], [], $version);
-
+            $theme->asset()->container('footer')->usePath()->add('custom2-js', 'js/customjs.js', [], [], $version);
             if (function_exists('shortcode')) {
                 $theme->composer([
                     'page',

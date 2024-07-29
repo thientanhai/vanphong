@@ -8,3 +8,6 @@
 
 {!! Theme::partial('footer') !!}
 
+<script>
+    jQuery('.removeindex').remove()
+</script>

@@ -26,6 +26,7 @@ Route::group(['namespace' => 'Theme\Resido\Http\Controllers', 'middleware' => ['
         Route::get('wishlist', 'ResidoController@getWishlist')->name('public.wishlist');
 
         Route::get('ajax/cities', 'ResidoController@ajaxGetCities')->name('public.ajax.cities');
+        Route::get('ajax/fullcities', 'ResidoController@ajaxGetCitiesfull')->name('public.ajax.citiesfull');
 
         Route::get('ajax/properties', 'ResidoController@ajaxGetProperties')->name('public.ajax.properties');
         Route::get('ajax/posts', 'ResidoController@ajaxGetPosts')->name('public.ajax.posts');

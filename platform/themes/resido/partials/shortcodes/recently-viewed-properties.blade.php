@@ -1,5 +1,5 @@
 <section>
-    <div class="container">
+    <div class="">
         <div class="row justify-content-center">
             <div class="col-lg-12 text-left">
                 <div class="sec-heading left">

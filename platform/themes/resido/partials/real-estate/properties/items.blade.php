@@ -8,7 +8,7 @@
 @if ($properties->count())
 
 @foreach ($properties as $property)
-  <figure>
+  <figure class="figure" created_at="{{strtotime($property->created_at)}}" price="{{ $property->price }}">
 
                 {!! Theme::partial('real-estate.properties.item-list', compact('property')) !!}
 

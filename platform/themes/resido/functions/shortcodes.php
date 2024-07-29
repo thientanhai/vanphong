@@ -131,7 +131,6 @@ app()->booted(function () {
                     'description' => $shortcode->content,
                     'properties' => $properties,
                     'style' => $shortcode->style ?? '1',
-                    // 'categories' => $shortcode->categories ?? [],
                 ]);
             }
         );

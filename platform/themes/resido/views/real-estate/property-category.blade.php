@@ -11,17 +11,18 @@
     </div>
 </div> --}}
 
-<section class="image-cover archive__cat__title" data-overlay="5"
+<section class="image-cover archive__cat__title cate__banner" data-overlay="5"
     style="background: url(&quot;https://vanphong.com.vn/storage/banners/agents-brokers.webp&quot;) no-repeat;">
     <div class="container-fluid px-xl-5">
         <div class="row justify-content-left">
             <div class="col-lg-8 col-md-8">
                 <div class="caption-wrap-content text-left">
                     <h1 class="ipt-title">{{ $category->name }}</h1>
-                    <span class="ipn-subtitle d-none property__cat">{{ $category->description }}</span>
+                    <span class="property__cat">{!! $category->description !!}</span>
 
-                    {!! Theme::partial('breadcrumb') !!}
-
+                    <div class="breadcrumb__detail property__cat__breadcumb">
+                        {!! Theme::partial('breadcrumb') !!}
+                    </div>
                 </div>
             </div>
         </div>

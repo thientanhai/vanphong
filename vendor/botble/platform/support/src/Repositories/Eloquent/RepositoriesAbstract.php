@@ -298,6 +298,7 @@ abstract class RepositoriesAbstract implements RepositoryInterface
 
     public function advancedGet(array $params = [])
     {
+     
         $params = array_merge([
             'condition' => [],
             'order_by' => [],
@@ -319,7 +320,7 @@ abstract class RepositoriesAbstract implements RepositoryInterface
         if ($params['select']) {
             $data = $data->select($params['select']);
         }
-
+              
         foreach ($params['order_by'] as $column => $direction) {
             if (! in_array(strtolower($direction), ['asc', 'desc'])) {
                 continue;

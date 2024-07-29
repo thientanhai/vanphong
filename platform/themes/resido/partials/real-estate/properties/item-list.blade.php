@@ -6,7 +6,7 @@
     data-lat="{{ $property->latitude }}"
     data-long="{{ $property->longitude }}" 
     bedroom="{{ $property->number_bedroom }}" 
-    square="{{ $property->square }}">
+    square="{{ $property->square }}" price="{{ $property->price }}" created_at="{{$property->created_at}}">
     <div class="listing-img-wrapper">
         <a href="{{ $property->url }}">
             @if($is_lazyload)
@@ -31,8 +31,11 @@
                 <a href="{{ $property->url }}" class="prt-link-detail"
                     title="{{ $property->name }}">{!! clean($property->name) !!}</a>
             </h4>
-            <div class="listing-name truncate cat__map__detail" location="{{$property->location}}">
+            <div class="listing-name truncate cat__map__detail locationname" location="{{$property->location}}">
                 {!! clean($property->location) !!}
+            </div>
+            <div class="cat__map__detail">
+                Giá thuê:<span class="price-for-rent"> {{ $property->price_html }}</span>
             </div>
         </div>
         

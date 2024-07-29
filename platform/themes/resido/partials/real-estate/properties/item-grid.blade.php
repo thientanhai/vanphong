@@ -54,8 +54,8 @@
     <div class="listing-short-detail-wrap">
         <div class="listing-short-detail">
             <div class="list-price home__list__price d-flex justify-flex-start">
-                <h6 class="listing-card-info-price project__price px-0">
-                    {{ $property->price_html . ' / m2' }}
+                <h6 class="listing-card-info-price project__price px-0 property__price">
+                    {{ $property->price_html }}
                 </h6>
                 @php
                     $customFields = $property->customFields()->get();
@@ -123,13 +123,15 @@
 
 <div class="d-flex justify-content-between consultant__box px-3 py-3">
     <div class="d-flex g-3 justify-content-center consultant__item">
-        <img alt="" srcset="" src="https://vanphong.com.vn/storage/consultant/lisa-da-correggio.webp" width="24" height="24"
-            decoding="async" data-nimg="1" class="h-6 w-6 rounded-full" loading="lazy"
-            style="color: transparent; object-fit: contain;">
-        <span class="text-sm text-gray-600">Golden Properties</span>
+        <a href="{{ $property->url }}">
+                <span class="text-sm text-gray-600"> {{ __('View') }} </span>
+                <img
+            alt="Contact icon" srcset="" src="https://vanphong.com.vn/storage/consultant/detail.png" width="18" height="18" decoding="async"
+            data-nimg="1" loading="lazy" style="color: transparent;">
+            </a>
     </div>
-    <button type="button" aria-label="Open a pop-up window with an agent contact form"
-        class="hover-animation flex items-center gap-x-2 text-sm font-semibold px-0 text-gray-950 hover:text-gray-900">Contact<img
+    <button data-bs-toggle="modal" data-bs-target="#modal{{$property->getKey()}}" type="button" aria-label="Open a pop-up window with an agent contact form"
+        class="hover-animation flex items-center gap-x-2 text-sm font-semibold px-0 text-gray-950 hover:text-gray-900 contract-btn">Contact<img
             alt="Contact icon" srcset="" src="https://vanphong.com.vn/storage/consultant/paper.png" width="24" height="24" decoding="async"
             data-nimg="1" loading="lazy" style="color: transparent;">
     </button>
@@ -150,3 +152,24 @@
     </div>
 </div>
 </div>
+
+@push('modals')
+<!-- Modal -->
+<div class="modal fade" id="modal{{$property->getKey()}}" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" aria-hidden="true">
+    <div class="modal-dialog" style="max-width: 30%!important">
+        <div class="modal-content">
+            <div class="modal-header border-0">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-1">
+                <div class="details-sidebar">
+                    <div class="sides-widget-body simple-form pb-1">
+                        {!! Theme::partial('real-estate.elements.form-contact-consult', ['data' => $property]) !!}
+                    </div>
+                    {!! dynamic_sidebar('property_sidebar') !!}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endpush()

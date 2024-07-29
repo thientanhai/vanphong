@@ -64,21 +64,49 @@
                 </div>
                 <div class="row">
                     <div class="fs-inner-container1 col-md-7" id="properties-list">
-                        <div class="list-layout data-listing position-relative cat__map">
+                        <div style="padding:10px 0;">Hiển thị <b><span id="numdpl">15</span> trong số <span id="totaldata">{{ $properties->withQueryString()->total()}}</span></b>
+                            <div style="float:right" id="togglemap">
+                          
+                                <span style="float: left;position: relative;right: 60px;top: -2px;">Bản đồ</span>
+                                <div class="checkbox-wrapper-3">
+                                    <input type="checkbox" id="cbx-3" checked onclick="checkmap($(this))" />
+                                    <label for="cbx-3" class="toggle"><span></span></label>
+                                </div>
+                            </div>
+                            <div class="filter__cate__mb">
+                                @include(Theme::getThemeNamespace('views.real-estate.includes.filters-cate-ctm'))
+                            </div>
+                               
+                        </div>
+                        
+                        <div class="list-layout data-listing position-relative cat__map cat__map_cl3" id="list-location">
+                        
                             {!! Theme::partial('real-estate.properties.items', compact('properties')) !!}
+                           
                         </div>
                     </div>
-                    <div class="fs-left-map-box1 col-md-5">
                    
-                        <div class="rightmap h-100">
-                        <div id='map-data'>
-
-                        </div>
-                            <div id="map2" style="display:none" data-type="{{ request()->input('type') }}"
-                                 data-url="{{ route('public.ajax.properties.map') }}"
-                                 data-center="{{ json_encode([43.615134, -76.393186]) }}"></div>
+                </div>
+                <div class="fs-left-map-box1 col-md-5 hhh46">
+                   
+                   <div class="rightmap h-100">
+                       <div id='map-data' data="json_encode($properties)"></div>
+                   </div>
+               </div>
+                        <div class="paginationjs paginationjs-big" style="display:none">
+                            <div class="paginationjs-pages"><ul id="ul-paging">
+                                <li class="paginationjs-prev disabled"  onclick="loadnext(0)">
+                                    <a>‹</a>
+                                </li>
+                                   <li class="paginationjs-next J-paginationjs-next " data-num="2" title="Next page"  onclick="loadnext(1)"><a>›</a></li>
+                                </ul>
+                            </div>
+                            <div class="paginationjs-pages-mb">
+                                <span onclick="loadnextmb()">load more</span>
+                            </div>
                         </div>
                     </div>
+                  
                 </div>
             </form>
         </div>
@@ -127,7 +155,7 @@
 
                     <!-- Pagination -->
                     <div class="row d-block">
-                        <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="col-lg-12 col-md-12 col-sm-12 rrrrr">
                             <nav class="d-flex justify-content-center pt-3" aria-label="Page navigation">
                                 {!! $properties->withQueryString()->onEachSide(1)->links() !!}
                             </nav>
@@ -144,5 +172,7 @@
 </script>
 <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
         ({key: "AIzaSyAm7W_gB88nqON4_PM3wZfceUNPSAv5mu0", v: "weekly"});</script>
-<script type="text/javascript" src="{{ URL::asset('themes/resido/js/map.js') }}"></script>
-<link href="{{ URL::asset('themes/resido/css/masonry.css') }}" rel="stylesheet">
+<script type="text/javascript" src="{{ URL::asset('themes/resido/js/map.js?v=1.0.3') }}"></script>
+<script type="text/javascript" src="{{ URL::asset('themes/resido/js/pagination.js') }}"></script>
+<link href="{{ URL::asset('themes/resido/css/masonrys.css') }}" rel="stylesheet">
+<link href="{{ URL::asset('themes/resido/css/mappage.css?v=1.0.3') }}" rel="stylesheet">

@@ -19,6 +19,40 @@ jQuery(document).ready(function(){
         $("#navbar").addClass("header-dark").removeClass('header-light');
     }
 })
+jQuery(document).ready(function() {
+
+  $('a[data-bs-toggle="collapse"]').on('click', function() {
+      var target = $(this).data('bs-target');
+      if (target === '#clOne') {
+          $('#clOne').addClass('show').removeClass('collapse');
+          $('#clOne3').removeClass('show').addClass('collapse');
+      } else if (target === '#clOne3') {
+          $('#clOne3').addClass('show').removeClass('collapse');
+          $('#clOne').removeClass('show').addClass('collapse');
+      }
+
+      if (target === '#clOne2') {
+        $('#clOne2').addClass('show').removeClass('collapse');
+          $('#clOne4').removeClass('show').addClass('collapse');
+      } else if (target === '#clOne4') {
+        $('#clOne4').addClass('show').removeClass('collapse');
+        $('#clOne2').removeClass('show').addClass('collapse');
+      }
+  });
+
+  
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const lightbox = GLightbox({
+      touchNavigation: true,
+      loop: true,
+      width: "100vw",
+      height: "100vh"
+  });
+});
+
+
 // jQuery(document).ready(function(){
 //     // Get the value of data-src attribute
 //     var dataSrc = $('.property-ctm .listing-img-wrapper img').attr('data-src');
@@ -157,6 +191,36 @@ document.addEventListener("DOMContentLoaded", function() {
   images.forEach(img => {
       img.src = img.getAttribute('data-src');
   });
+});
+
+
+
+jQuery(document).ready(function(){
+	var textLength = jQuery('.product__description').length;
+	if(textLength > 0){
+            var wrap = jQuery('.product__description');
+            var current_height = wrap.height();
+            var your_height = 400;
+            if(current_height > your_height){
+                wrap.addClass('height__text');
+                wrap.append(function(){
+                    return '<div class="devwebvn_readmore_flatsome devwebvn_readmore_flatsome_more"><a title="Xem thêm" href="javascript:void(0);">Xem thêm</a></div>';
+                });
+                wrap.append(function(){
+                    return '<div class="devwebvn_readmore_flatsome devwebvn_readmore_flatsome_less" style="display: none;"><a title="Xem thêm" href="javascript:void(0);">Thu gọn</a></div>';
+                });
+                jQuery('body').on('click','.devwebvn_readmore_flatsome_more', function(){
+					wrap.removeClass('height__text');
+                    jQuery('body .devwebvn_readmore_flatsome_more').hide();
+                    jQuery('body .devwebvn_readmore_flatsome_less').show();
+                });
+                jQuery('body').on('click','.devwebvn_readmore_flatsome_less', function(){
+					wrap.addClass('height__text');
+                    jQuery('body .devwebvn_readmore_flatsome_less').hide();
+                    jQuery('body .devwebvn_readmore_flatsome_more').show();
+                });
+            }
+        }
 });
 
 

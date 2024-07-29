@@ -1,0 +1,16 @@
+@php
+    $isAvailableForOneCountry = theme_option('is_available_for_one_country', 'no');
+@endphp
+<div id="lct_search">
+    <div>
+    <ul class="ward_id ul_location">
+<ul
+    data-placeholder="{{ $isAvailableForOneCountry ? __('City') : (__('Country') . ' ' . __('State') . ' ' . __('City'))  }}"
+    class="city_id_full ul_location">
+   <li style="border:none">Tỉnh thành <span class="s-right" onclick="$('#lct_search').hide()">x<span></li>
+</ul>
+
+   
+</ul>
+</div>
+</div>

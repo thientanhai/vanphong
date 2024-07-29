@@ -72,7 +72,7 @@ class PropertyRepository extends RepositoriesAbstract implements PropertyInterfa
             'location' => null,
             'sort_by' => null,
         ], $filters);
-
+       // var_dump($filters);
         $orderBy = match ($filters['sort_by']) {
             'date_asc' => [
                 'created_at' => 'ASC',
@@ -93,17 +93,17 @@ class PropertyRepository extends RepositoriesAbstract implements PropertyInterfa
                 'created_at' => 'DESC',
             ],
         };
-
+     
         $params = array_merge([
             'condition' => [],
             'order_by' => [
                 'created_at' => 'DESC',
             ],
             'take' => null,
-            'paginate' => [
+            /*'paginate' => [
                 'per_page' => 10,
                 'current_paged' => 1,
-            ],
+            ],*/
             'select' => [
                 '*',
             ],
@@ -111,7 +111,11 @@ class PropertyRepository extends RepositoriesAbstract implements PropertyInterfa
         ], $params);
 
         $params['order_by'] = $orderBy;
-
+        $params['paginate'] = [
+            'per_page' => 100000,
+            'current_paged' => 1,
+        ];
+ 
         // @phpstan-ignore-next-line
         $this->model = $this->originalModel->active();
 

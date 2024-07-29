@@ -195,7 +195,7 @@ class PublicController extends Controller
             'features' => $request->input('features'),
             'sort_by' => $request->input('sort_by'),
         ];
-
+  
         $params = [
             'paginate' => [
                 'per_page' => $perPage ?: 12,
@@ -373,7 +373,7 @@ class PublicController extends Controller
      * @param BaseHttpResponse $response
      * @return BaseHttpResponse|\Response
      */
-    public function getPropertyCategory(
+    public function getPropertyCategory44(
         $key,
         Request $request,
         SlugInterface $slugRepository,

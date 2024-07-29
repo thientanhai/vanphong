@@ -162,22 +162,29 @@ class HandleFrontPages
                 SeoHelper::setSeoOpenGraph($meta);
 
                 Theme::breadcrumb()->add($category->name);
-
+                $sortp=$request->slsort;
+                $newsort = "created_at";
+                if($sortp=="1")
+                    $newsort = 'price_asc';
+                else if($sortp=="2")
+                    $newsort = 'price_desc';
                 $filters = [
                     'category_id' => $category->getKey(),
+                    'sort_by'=>$newsort
                 ];
 
                 $perPage = (int)theme_option('number_of_properties_per_page', 12);
-
+           
                 $params = [
                     'paginate' => [
                         'per_page' => $perPage ?: 12,
+                        //'per_page' => 10000,
                         'current_paged' => $request->integer('page', 1),
                     ],
                     'order_by' => ['re_properties.created_at' => 'DESC'],
                     'with' => RealEstateHelper::getPropertyRelationsQuery(),
                 ];
-
+               
                 $properties = app(PropertyInterface::class)->getProperties($filters, $params);
 
                 return [

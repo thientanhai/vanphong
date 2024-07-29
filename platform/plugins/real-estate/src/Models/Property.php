@@ -219,7 +219,7 @@ class Property extends BaseModel
                 $price = $this->price_format;
 
                 if ($this->type == PropertyTypeEnum::RENT) {
-                    $price .= ' / ' . Str::lower($this->period->label());
+                    $price .= ' / m2 / ' . Str::lower($this->period->label());
                 }
 
                 return $price;

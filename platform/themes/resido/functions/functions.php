@@ -549,6 +549,10 @@ add_filter(BASE_FILTER_BEFORE_RENDER_FORM, function ($form, $data) {
         $dienlanhFee = $data->getMetaData('dienlanh_fee', true);
         $otFee = $data->getMetaData('ot_fee', true);
 
+        //add Property Rate
+        $propertyRate = $data->getMetaData('property_rate', true);
+
+
         $form
             ->add('service__fee', 'text', [
                 'label'      => __('Phí dịch vụ'),
@@ -597,6 +601,14 @@ add_filter(BASE_FILTER_BEFORE_RENDER_FORM, function ($form, $data) {
                 'attr'       => [
                     'placeholder' => __('Phí ngoài giờ'),
                 ],
+            ])
+            ->add('property_rate', 'text', [
+                'label'      => __('Hạng tòa nhà'),
+                'label_attr' => ['class' => 'control-label'],
+                'value'      => $propertyRate, // You need to define $serviceFee2
+                'attr'       => [
+                    'placeholder' => __('Hạng A'),
+                ],
             ]);
     }
     
@@ -607,7 +619,7 @@ add_action([BASE_ACTION_AFTER_CREATE_CONTENT, BASE_ACTION_AFTER_UPDATE_CONTENT],
     if ($data instanceof \Botble\RealEstate\Models\Property) {
         // MetaBox::saveMetaBoxData($data, 'service__fee', $request->input('service__fee'));
 
-        $metadataKeys = ['service__fee', 'car_fee', 'motorbike_fee', 'vat_fee', 'dienlanh_fee', 'ot_fee'];
+        $metadataKeys = ['service__fee', 'car_fee', 'motorbike_fee', 'vat_fee', 'dienlanh_fee', 'ot_fee', 'property_rate'];
         
         // Loop through each key and save the metadata
         foreach ($metadataKeys as $key) {
@@ -635,4 +647,14 @@ add_filter(BASE_FILTER_BEFORE_RENDER_FORM, function ($form, $data) {
     return $form;
 }, 120, 2);
 
+add_filter(BASE_FILTER_BEFORE_RENDER_FORM, function ($form, $data) {
+    if ($data instanceof \Botble\RealEstate\Models\Property) {
+        $form->remove(['number_bedroom', 'number_bathroom', 'number_floor']);
+    }
 
+    return $form;
+}, 120, 2);
+
+
+
+//Custom breacrumb
