@@ -9998,3 +9998,4 @@ platform/themes/resido/public/plugins/fonts/slick.woff
 platform/themes/resido/public/plugins/jquery-bar-rating/jquery.barrating.min.js
 platform/themes/resido/public/plugins/jquery-bar-rating/themes/fontawesome-stars.css
 platform/themes/resido/routes/web.php
+.vscode/sftp.json
