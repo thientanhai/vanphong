@@ -18,6 +18,7 @@
 
         var onloadCallback = function() {
             window.recaptchaInputs.forEach(function(item) {
+                console.log(item);
                 grecaptcha.render(item);
             });
         };

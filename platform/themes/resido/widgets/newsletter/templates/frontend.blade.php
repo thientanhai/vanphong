@@ -13,13 +13,14 @@
             <input type="name" name="email" class="form-control bg-white font-small" placeholder="{{ __('Tên') }}">
 
             <input type="email" name="email" class="form-control bg-white font-small" placeholder="{{ __('Enter your email') }}">
-            <button class="btn bg-dark text-white" type="submit">{{ __('Subscribe') }}</button>
-        </div>
-        @if (setting('enable_captcha') && is_plugin_active('captcha'))
+            @if (setting('enable_captcha') && is_plugin_active('captcha'))
             <div class="form-group">
                 {!! Captcha::display() !!}
             </div>
         @endif
+            <button class="btn bg-dark text-white" type="submit">{{ __('Subscribe') }}</button>
+        </div>
+        
     </form>
 </div>
 @endif

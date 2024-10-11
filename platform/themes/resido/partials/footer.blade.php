@@ -35,14 +35,14 @@
             </div>
         </div>
 
-        {{-- <div class="property_block_wrap style-2 d-none parentcate">
+        <div class="property_block_wrap style-2 d-none parentcate">
             <div class="property_block_wrap_header"><a data-bs-toggle="collapse" data-parent="#features"
                     data-bs-target="#clOne2" aria-controls="clOne2" href="javascript:void(0);" aria-expanded="false"
                     class="collapsed">
                     <h4 class="property_block_title">Văn phòng theo thành phố </h4>
                 </a>
             </div>
-        </div> --}}
+        </div>
 
         <div class="property_block_wrap style-2 parentcate">
             <div class="property_block_wrap_header"><a data-bs-toggles2="collapse" data-parents2="#features"
@@ -59,16 +59,22 @@
         <div class="panel-collapse2 collapse2 show clOne" aria-labelledby="clOne" style="">
             <div class="block-body p-2 bg-white">
                 <ul class="detail_features">
-                    @foreach(json_decode(theme_option('office_types'), true) as $officeTypes)
-                        <li>
-                            <a href="{{ $officeTypes[1]['value'] }}" target="_blank" title="">{{ $officeTypes[0]['value'] }} </a>
-                        </li>
-                    @endforeach
-                </ul>
+                    <li>Văn phòng hạng A </li>
+                    <li>Văn phòng hạng B </li>
+                    <li>Văn phòng hạng C </li>
+                    <li>Văn phòng hạng D </li>
+                    <li>Văn phòng giá rẻ </li>
+                    <li>Văn phòng chất lượng cao </li>
+                    <li>Văn phòng hạng luxury</li>
+                    <li>Văn phòng hạng A </li>
+                    <li>Văn phòng hạng A </li>
+                    <li>Văn phòng hạng A </li>
+                    <li>Văn phòng hạng A </li>
+                    <li>Văn phòng hạng A </li>
             </div>
         </div>
 
-        {{-- <div class="panel-collapse2 collapse2 clOne2" aria-labelledby="clOne2" style="">
+        <div class="panel-collapse2 collapse2 clOne2" aria-labelledby="clOne2" style="">
             <div class="block-body">
                 <ul class="detail_features">
                     <li>Văn phòng cho thuê TP. HCM</li>
@@ -80,16 +86,27 @@
 
                 </ul>
             </div>
-        </div> --}}
+        </div>
 
         <div class="panel-collapse2 collapse2 clOne3" aria-labelledby="clOne3" style="">
             <div class="block-body">
                 <ul class="detail_features">
-                    @foreach(json_decode(theme_option('office_districts'), true) as $officeDistrict)
-                        <li>
-                            <a href="{{ $officeDistrict[1]['value'] }}" target="_blank" title="">{{ $officeDistrict[0]['value'] }} </a>
-                        </li>
-                    @endforeach
+                    <li>Văn phòng cho thuê Quận 1</li>
+                    <li>Văn phòng cho thuê Quận 2</li>
+                    <li>Văn phòng cho thuê Quận 3</li>
+                    <li>Văn phòng cho thuê Quận 4</li>
+                    <li>Văn phòng cho thuê Quận 5</li>
+                    <li>Văn phòng cho thuê Quận 6</li>
+                    <li>Văn phòng cho thuê Quận 7</li>
+                    <li>Văn phòng cho thuê Quận 8</li>
+                    <li>Văn phòng cho thuê Quận 9</li>
+                    <li>Văn phòng cho thuê Quận 10 </li>
+                    <li>Văn phòng cho thuê Quận 11 </li>
+                    <li>Văn phòng cho thuê Quận 12 </li>
+                    <li>Văn phòng cho thuê Q. Gò Vấp </li>
+                    <li>Văn phòng cho thuê Q. Tân Bình </li>
+                    <li>Văn phòng cho thuê Q. Bình Thạnh </li>
+                    <li>Văn phòng cho thuê Q. Tân Phú </li>
                 </ul>
             </div>
         </div>
@@ -113,11 +130,13 @@
         <div class="panel-collapse2 collapse2 clOne2 show" aria-labelledby2="clOne2" style="">
             <div class="block-body popular__cate__mb__item">
                 <ul class="detail_features">
-                    @foreach(json_decode(theme_option('office_types'), true) as $officeTypes)
-                        <li>
-                            <a href="{{ $officeTypes[1]['value'] }}" target="_blank" title="">{{ $officeTypes[0]['value'] }} </a>
-                        </li>
-                    @endforeach
+                    <li>Văn phòng hạng A </li>
+                    <li>Văn phòng hạng B </li>
+                    <li>Văn phòng hạng C </li>
+                    <li>Văn phòng hạng D </li>
+                    <li>Văn phòng giá rẻ </li>
+                    <li>Văn phòng chất lượng cao </li>
+                    <li>Văn phòng hạng luxury </li>
                 </ul>
             </div>
         </div>
@@ -152,11 +171,22 @@
         <div class="panel-collapse2 collapse2 clOne4" aria-labelledby="clOne4" style="">
             <div class="block-body popular__cate__mb__item">
                 <ul class="detail_features">
-                    @foreach(json_decode(theme_option('office_districts'), true) as $officeDistrict)
-                        <li>
-                            <a href="{{ $officeDistrict[1]['value'] }}" target="_blank" title="">{{ $officeDistrict[0]['value'] }} </a>
-                        </li>
-                    @endforeach
+                    <li>Văn phòng cho thuê Quận 1</li>
+                    <li>Văn phòng cho thuê Quận 2</li>
+                    <li>Văn phòng cho thuê Quận 3</li>
+                    <li>Văn phòng cho thuê Quận 4</li>
+                    <li>Văn phòng cho thuê Quận 5</li>
+                    <li>Văn phòng cho thuê Quận 6</li>
+                    <li>Văn phòng cho thuê Quận 7</li>
+                    <li>Văn phòng cho thuê Quận 8</li>
+                    <li>Văn phòng cho thuê Quận 9</li>
+                    <li>Văn phòng cho thuê Quận 10 </li>
+                    <li>Văn phòng cho thuê Quận 11 </li>
+                    <li>Văn phòng cho thuê Quận 12 </li>
+                    <li>Văn phòng cho thuê Q. Gò Vấp </li>
+                    <li>Văn phòng cho thuê Q. Tân Bình </li>
+                    <li>Văn phòng cho thuê Q. Bình Thạnh </li>
+                    <li>Văn phòng cho thuê Q. Tân Phú </li>
                 </ul>
             </div>
         </div>
@@ -194,19 +224,17 @@
                     @endif
                 </div>
             </div> --}}
-            <div class="newsletter__hiden__pc ">
-                {!! dynamic_sidebar('footer_sidebar_3') !!} 
-            </div>
-        </div>
+
 
             <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="footer-widget">
                         {{-- <h4>LIÊN HỆ</h4> --}}
                         @if (theme_option('logo_white'))
                             <img src="{{ RvMedia::getImageUrl(theme_option('logo_white')) }}" class="img-footer"
                                 style="max-height: 38px" alt="{{ theme_option('site_name') }}">
                         @endif
+
                         <div class="py-2 hiden__mb">
                             @if (theme_option('social_links'))
                                 <ul class="footer-bottom-social">
@@ -220,19 +248,18 @@
                                 </ul>
                             @endif
                         </div>
-                        
                     </div>
                 </div>
 
-                <div class="col-sm-6 d-flex footer__menu__info">
-                    {!! dynamic_sidebar('footer_sidebar_2') !!}
-                    
+                <div class="col-sm-6">
+                    <div class="row">
+                        {!! dynamic_sidebar('footer_sidebar_2') !!}
+                    </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 block__mobile">
-                    <div class="newsletter__mb">
-                        {!! dynamic_sidebar('footer_sidebar_3') !!} 
-                    </div>
+                <div class="col-lg-3 col-md-6">
+                    {!! dynamic_sidebar('footer_sidebar_3') !!}
+
                     <div class="footer__social__mb d-lg-none">
                         @if (theme_option('social_links'))
                             <ul class="footer-bottom-social">

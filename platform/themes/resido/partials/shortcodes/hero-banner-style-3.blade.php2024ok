@@ -20,25 +20,23 @@
                         </div>    
                         
                 <div class="search-mobile row">
-                <p>
+                
                 <label>Tìm kiếm</label>
                 
                 <span class="closes_" onclick="opensearch()"></span>
 
-                </p>
+                      
 
-                        <div class="col-lg-3 col-md-3 col-sm-12 online online-0" style="padding-rigth:5px">
+                        <div class="col-lg-3 col-md-3 col-sm-12 online">
                             <div class="form-group borders">
-                           
                                 <div class="input-with-icon" >
-                                <span class="sub-tt sub-position">Hạng</span>
                                     {!! Theme::partial('real-estate.filters.categories') !!}
                                     {{-- <i class="ti-briefcase"></i> --}}
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-lg-3 col-md-3 col-sm-12 online" style="padding-left:5px">
+                        <div class="col-lg-3 col-md-3 col-sm-12 online">
                             <div class="form-group borders">
                                 <div class="input-with-icon">
                                     {!! Theme::partial('real-estate.filters.citieshome') !!}

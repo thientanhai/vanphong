@@ -139,7 +139,7 @@ class PublicController extends Controller
         SeoHelper::setSeoOpenGraph($meta);
 
         Theme::breadcrumb()
-            ->add(__('Home'), route('public.index'))
+            ->add(__('Trang chủ'), route('public.index'))
             ->add($property->name, $property->url);
 
         do_action(BASE_ACTION_PUBLIC_RENDER_SINGLE, PROPERTY_MODULE_SCREEN_NAME, $property);
@@ -212,7 +212,7 @@ class PublicController extends Controller
         }
 
         Theme::breadcrumb()
-            ->add(__('Home'), route('public.index'))
+            ->add(__('Trang chủ'), route('public.index'))
             ->add(__('Properties'), route('public.properties'));
 
         $categories = $categoryRepository->pluck('name', 'id');
@@ -268,7 +268,7 @@ class PublicController extends Controller
         SeoHelper::setSeoOpenGraph($meta);
 
         Theme::breadcrumb()
-            ->add(__('Home'), url('/'))
+            ->add(__('Trang chủ'), url('/'))
             ->add($project->name, $project->url);
 
         $relatedProjects = $projectRepository->getRelatedProjects(
@@ -356,7 +356,7 @@ class PublicController extends Controller
         }
 
         Theme::breadcrumb()
-            ->add(__('Home'), route('public.index'))
+            ->add(__('Trang chủ'), route('public.index'))
             ->add(__('Projects'), route('public.projects'));
 
         $categories = get_property_categories([
@@ -411,7 +411,7 @@ class PublicController extends Controller
         SeoHelper::setSeoOpenGraph($meta);
 
         Theme::breadcrumb()
-            ->add(__('Home'), route('public.index'))
+            ->add(__('Trang chủ'), route('public.index'))
             ->add($category->name, $category->url);
 
         $filters = [

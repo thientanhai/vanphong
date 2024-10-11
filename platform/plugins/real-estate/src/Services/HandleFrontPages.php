@@ -58,7 +58,7 @@ class HandleFrontPages
                 SeoHelper::setSeoOpenGraph($meta);
 
                 Theme::breadcrumb()
-                    ->add(__('Properties'), route('public.properties'))
+                    ->add(__($property->category->name), $property->category->url)
                     ->add($property->name);
 
                 Helper::handleViewCount($property, 'viewed_property');

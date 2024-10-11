@@ -49,7 +49,7 @@ class ResidoController extends PublicController
         if (!$city) {
             abort(404);
         }
-        var_dump($city->name);
+     
         SeoHelper::setTitle(__('Properties in :city', ['city' => $city->name]));
 
         Theme::breadcrumb()

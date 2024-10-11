@@ -2,7 +2,9 @@
 <div class="search-cate">
                                
                                <p class="tt-search">Địa điểm:</p>
-                               <div class="p-txt p-txt-lct">x</div>
+                               <div class="p-txt p-txt-lct">
+                               <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="shrink-0"><path d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" fill="#64748B"></path></svg>
+                               </div>
                                <div class="opfilter">
                                   
                                    @if(!empty(request()->input('city_id')))
@@ -27,7 +29,10 @@
 <div class="search-cate">
                                
                                     <p class="tt-search">Giá:</p>
-                                    <div class="p-txt p-txt-price">x</div>
+                                    <div class="p-txt p-txt-price">
+                                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="shrink-0"><path d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" fill="#64748B"></path></svg>
+                        
+                                    </div>
                                     <div class="opfilter">
                                         <span id="choseprice"  class="txt-begin" obj="">Chọn</span>
                                         
@@ -42,7 +47,9 @@
                                 </div>
                                 <div class="search-cate">
                                 <p class="tt-search">Sắp xếp:</p>
-                                <div class="p-txt p-txt-sort">x</div>
+                                <div class="p-txt p-txt-sort">
+                                <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="shrink-0"><path d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" fill="#64748B"></path></svg>
+                                </div>
                                 <div class="opfilter">
                                         <span id="chosesort"  class="txt-begin" obj="">Mới nhất</span>
                                         
@@ -61,7 +68,9 @@
                                 <div class="search-cate">
                                
                                <p class="tt-search">Loại hình:</p>
-                               <div class="p-txt p-txt-type">x</div>
+                               <div class="p-txt p-txt-type">
+                               <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="shrink-0"><path d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" fill="#64748B"></path></svg>
+                               </div>
                                <div class="opfilter">
                                    <span id="chosetype" class="txt-begin" obj="">Chọn</span>
                                    

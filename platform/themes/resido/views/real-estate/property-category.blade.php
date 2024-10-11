@@ -18,7 +18,7 @@
             <div class="col-lg-8 col-md-8">
                 <div class="caption-wrap-content text-left">
                     <h1 class="ipt-title">{{ $category->name }}</h1>
-                    <span class="property__cat">{!! $category->description !!}</span>
+                    {{-- <span class="property__cat">{!! $category->description !!}</span> --}}
 
                     <div class="breadcrumb__detail property__cat__breadcumb">
                         {!! Theme::partial('breadcrumb') !!}

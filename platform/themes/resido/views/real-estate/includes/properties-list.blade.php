@@ -167,6 +167,22 @@
     </section>
 @endif
 
+<!-- Property description show more !-->
+@if ($category->description)
+    <div class="container">
+        <div class="block">
+        <div class="content">
+            <div class="js-excerpt excerpt-hidden">
+                {{-- <h2>{!! $category->name !!}</h2> --}}
+                {!! $category->description !!}
+            </div>
+        </div>
+        <a role="button" href="#" class="js-show-more">Xem thêm</a>
+        </div>
+    </div>
+@endif
+
+
 <script id="traffic-popup-map-template" type="text/x-custom-template">
     {!! Theme::partial('real-estate.properties.map-popup', ['property' => get_object_property_map()]) !!}
 </script>

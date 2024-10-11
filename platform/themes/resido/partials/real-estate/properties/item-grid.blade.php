@@ -14,10 +14,6 @@
                 @foreach ($property['images'] as $image)
                     <div>
                         <a href="{{ $property->url }}">
-                            {{-- <div class="cat__inner__image">
-                                <a href="">Văn phòng Hạng A</a>
-                            </div> --}}
-
                             @if ($is_lazyload)
                                 <img src="{{ get_image_loading() }}"
                                     data-src="{{ RvMedia::getImageUrl($image, 'full', false, RvMedia::getDefaultImage()) }}"
@@ -153,8 +149,7 @@
 </div>
 </div>
 
-@push('modals')
-<!-- Modal -->
+{{-- @push('modals')
 <div class="modal fade" id="modal{{$property->getKey()}}" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" aria-hidden="true">
     <div class="modal-dialog" style="max-width: 30%!important">
         <div class="modal-content">
@@ -172,4 +167,4 @@
         </div>
     </div>
 </div>
-@endpush()
+@endpush() --}}

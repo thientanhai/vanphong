@@ -543,16 +543,6 @@ if (! function_exists('calculateReviewMetaData')) {
 add_filter(BASE_FILTER_BEFORE_RENDER_FORM, function ($form, $data) {
     if ($data instanceof \Botble\RealEstate\Models\Property) {
         $serviceFee = $data->getMetaData('service__fee', true);
-        $carFee = $data->getMetaData('car_fee', true);
-        $motorbikeFee = $data->getMetaData('motorbike_fee', true);
-        $vatFee = $data->getMetaData('vat_fee', true);
-        $dienlanhFee = $data->getMetaData('dienlanh_fee', true);
-        $otFee = $data->getMetaData('ot_fee', true);
-
-        //add Property Rate
-        $propertyRate = $data->getMetaData('property_rate', true);
-
-
         $form
             ->add('service__fee', 'text', [
                 'label'      => __('Phí dịch vụ'),
@@ -561,55 +551,8 @@ add_filter(BASE_FILTER_BEFORE_RENDER_FORM, function ($form, $data) {
                 'attr'       => [
                     'placeholder' => __('Phí dịch vụ'),
                 ],
-            ])
-            ->add('car_fee', 'text', [
-                'label'      => __('Phí xe hơi '),
-                'label_attr' => ['class' => 'control-label'],
-                'value'      => $carFee, // You need to define $serviceFee1
-                'attr'       => [
-                    'placeholder' => __('Phí xe hơi'),
-                ],
-            ])
-            ->add('motorbike_fee', 'text', [
-                'label'      => __('Phí xe máy'),
-                'label_attr' => ['class' => 'control-label'],
-                'value'      => $motorbikeFee, // You need to define $serviceFee2
-                'attr'       => [
-                    'placeholder' => __('Phí xe máy'),
-                ],
-            ])
-            ->add('vat_fee', 'text', [
-                'label'      => __('VAT'),
-                'label_attr' => ['class' => 'control-label'],
-                'value'      => $vatFee, // You need to define $serviceFee2
-                'attr'       => [
-                    'placeholder' => __('VAT 10%'),
-                ],
-            ])
-            ->add('dienlanh_fee', 'text', [
-                'label'      => __('Điện lạnh phí'),
-                'label_attr' => ['class' => 'control-label'],
-                'value'      => $dienlanhFee, // You need to define $serviceFee2
-                'attr'       => [
-                    'placeholder' => __('Phí điện lạnh'),
-                ],
-            ])
-            ->add('ot_fee', 'text', [
-                'label'      => __('Phí ngoài giờ'),
-                'label_attr' => ['class' => 'control-label'],
-                'value'      => $otFee, // You need to define $serviceFee2
-                'attr'       => [
-                    'placeholder' => __('Phí ngoài giờ'),
-                ],
-            ])
-            ->add('property_rate', 'text', [
-                'label'      => __('Hạng tòa nhà'),
-                'label_attr' => ['class' => 'control-label'],
-                'value'      => $propertyRate, // You need to define $serviceFee2
-                'attr'       => [
-                    'placeholder' => __('Hạng A'),
-                ],
             ]);
+
     }
     
     return $form;
@@ -617,44 +560,8 @@ add_filter(BASE_FILTER_BEFORE_RENDER_FORM, function ($form, $data) {
 
 add_action([BASE_ACTION_AFTER_CREATE_CONTENT, BASE_ACTION_AFTER_UPDATE_CONTENT], function ($screen, $request, $data) {
     if ($data instanceof \Botble\RealEstate\Models\Property) {
-        // MetaBox::saveMetaBoxData($data, 'service__fee', $request->input('service__fee'));
-
-        $metadataKeys = ['service__fee', 'car_fee', 'motorbike_fee', 'vat_fee', 'dienlanh_fee', 'ot_fee', 'property_rate'];
-        
-        // Loop through each key and save the metadata
-        foreach ($metadataKeys as $key) {
-            // Save the metadata for the current key
-            MetaBox::saveMetaBoxData($data, $key, $request->input($key));
-        }
+        MetaBox::saveMetaBoxData($data, 'service__fee', $request->input('service__fee'));
     }
 }, 120, 3);
 
-//change type tinyMCE for category description
-add_filter(BASE_FILTER_BEFORE_RENDER_FORM, function ($form, $data) {
-    if ($data instanceof \Botble\RealEstate\Models\Category) {
-        $form
-            ->modify('description', 'editor', [
-                'label' => trans('core/base::forms.description'),
-                'label_attr' => ['class' => 'control-label'],
-                'attr' => [
-                    'rows' => 4,
-                    'placeholder' => trans('core/base::forms.description_placeholder'),
-                    'data-counter' => 2000,
-                ],
-            ], true);
-    }
 
-    return $form;
-}, 120, 2);
-
-add_filter(BASE_FILTER_BEFORE_RENDER_FORM, function ($form, $data) {
-    if ($data instanceof \Botble\RealEstate\Models\Property) {
-        $form->remove(['number_bedroom', 'number_bathroom', 'number_floor']);
-    }
-
-    return $form;
-}, 120, 2);
-
-
-
-//Custom breacrumb

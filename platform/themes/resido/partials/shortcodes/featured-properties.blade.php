@@ -13,8 +13,8 @@
             </div>
         </div> --}}
 
-        
 
+        <?php $cateroot=get_all_cate(); ?>
         <div class="">
             <div class="swiper-container swiper-mobile-app noselect">
                 <div class="sec-heading">
@@ -26,10 +26,32 @@
                     {{-- <p>{!! clean($description) !!}</p> --}}
                 </div>
                 <div class="swiper-wrapper">
+          
                     @foreach($properties as $property)
-                            <div class="swiper-slide ag-vacancy_item col-md-4 box__content xor-margin-bottom-60">
-                                {!! Theme::partial('real-estate.properties.item-grid', compact('property')) !!}
+                      <?php 
+                        $cate=$property["categories"];
+                        
+                        $ava=0;
+                        foreach ($cate as $c) {
+                           
+                            foreach ($cateroot as $root) {
+                                if($root["id"]==$c["id"]){
+                                 if(strval($root->parent_id)===strval($category_id)){
+                                      
+                                        $ava=1;break;
+                                    }
+                                }
+                            }
+                            if($ava==1)break;
+                        }
+                    
+                       ?>
+                       @if($ava==1)
+                            <div sss="{{$cate}}" class="swiper-slide ag-vacancy_item col-md-4 box__content xor-margin-bottom-60">
+                               
+                            {!! Theme::partial('real-estate.properties.item-grid', compact('property')) !!}
                             </div>
+                        @endif
                     @endforeach
                 </div>
                
@@ -57,6 +79,7 @@
             </div>
         </div>	 --}}
 {{-- 
+    
         <div class="row list-layout sss home__custom__slide">
             @foreach($properties as $property)
     
