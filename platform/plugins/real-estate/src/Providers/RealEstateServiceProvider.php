@@ -594,6 +594,7 @@ class RealEstateServiceProvider extends ServiceProvider
         $this->app->booted(function () {
             SeoHelper::registerModule([
                 Property::class,
+                Category::class,
                 Project::class,
             ]);
 
